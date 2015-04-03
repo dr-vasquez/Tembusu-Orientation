@@ -35,8 +35,7 @@
 									<nav id="nav">
 										<ul>
 											
-											<li>
-												<a href="orientationGroups.html">Orientation Groups</a></li>
+											<li><a href="orientationGroups.html">Orientation Groups</a></li>
 											<li><a href="timeline.html">Timeline</a></li>
 											<li><a href="aboutus.html">About Us</a></li>
 											<li><a href="gallery.html">Gallery	</a></li>
@@ -52,30 +51,32 @@
 				<br><br>
 				 <div class="ui segment narrow">
 				 <h3 class="ui segment stacked inverted black block header" align = "center">Private Access: OGL's only</h3>
-				 		<form action="/login" method="post" class="ui form"><div class="field">
-				 			<label>Username</label>
-				 				<div class="ui left icon input">
-				 					<input type="text" name="username" placeholder="Username" size = "32">
-				 					<i class="user icon"></i>
-				 					</div>
-				 					</div>
-				 					<div class="field">
-				 						<label>Password</label>
-				 							<div class="ui left icon input">
-				 								<input type="password" name="password" placeholder="Password" size = "32">
-				 									<i class="lock icon"></i></div></div><div class="field">
-				 									<br>
-				 										<input type="submit" value="Log In" class="ui black submit button">
-				 										</div>
-				 										</form>
+				 	
+					
+				<form action="index.php" method="post">
+					<input type="hidden" name="action" value="set_login">
+						<?php echo $msg; ?>
+							
+							<div class="field">
+								<label for="user">Username</label>
+									<div class="ui left icon input">
+										<input type="text" name="user" placeholder="Username" size = "32" id="user">
+										<i class="user icon"></i>
+									</div>
+				 			</div>
+				 			<div class="field">
+				 				<label for="pass">Password</label>
+				 					<div class="ui left icon input">
+				 						<input type="password" name="pass" placeholder="Password" size = "32" id="pass">
+				 						<i class="lock icon"></i></div></div>
+									<div class="field">
+				 						<br>
+				 						<input type="submit" value="Login" class="ui black submit button">
+									</div>
+				 		</form>
 				 						
-				 						
-<a href="postLogin.html">Dummy Account to show how it should look later on</a>		
-</ul>
-</nav>
-</div>
-</header>
-</div>
-</div>
+					</div>
+				</div>
+		 </div>
 </body>
 </html>
