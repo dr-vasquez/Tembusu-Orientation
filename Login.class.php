@@ -122,7 +122,86 @@ function check(){
 # returns: nothing, but exits at end
 function prompt($msg=''){
 ?>
+	
+	<!DOCTYPE html>
+<html>
+<head>
+		<title>Tembusu College Orientation</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="semantic-ui-1.0/semantic.css">
+		<script type="text/javascript" href="semantic-ui-1.0/semantic.js"></script>
+	
+	
+	</head>
+<body>
 
+<div id="header-wrapper">
+				<div class="container">
+
+					<!-- Header -->
+						<header id="header">
+							<div class="inner">
+							
+								<!-- Logo -->
+									<h1><a href="index.html" id="logo">Tembusu College Orientation</a></h1>
+								
+								<!-- Nav -->
+									<nav id="nav">
+										<ul>
+											
+											<li><a href="orientationGroups.html">Orientation Groups</a></li>
+											<li><a href="timeline.html">Timeline</a></li>
+											<li><a href="aboutus.html">About Us</a></li>
+											<li><a href="gallery.html">Gallery	</a></li>
+											<li><a href="login.html">Login</a></li>
+
+
+										</ul>
+									</nav>
+							
+							</div>
+						</header>
+				</li>
+				<br><br>
+				 <div class="ui segment narrow">
+				 <h3 class="ui segment stacked inverted black block header" align = "center">Private Access: OGL's only</h3>
+				 	
+					
+				<form action="index.php" method="post">
+					<input type="hidden" name="action" value="set_login">
+						<?php echo $msg; ?>
+							
+							<div class="field">
+								<label for="user">Username</label>
+									<div class="ui left icon input">
+										<input type="text" name="user" placeholder="Username" size = "32" id="user">
+										<i class="user icon"></i>
+									</div>
+				 			</div>
+				 			<div class="field">
+				 				<label for="pass">Password</label>
+				 					<div class="ui left icon input">
+				 						<input type="password" name="pass" placeholder="Password" size = "32" id="pass">
+				 						<i class="lock icon"></i></div></div>
+									<div class="field">
+				 						<br>
+				 						<input type="submit" value="Login" class="ui black submit button">
+									</div>
+				 </form>
+				 </div>
+				</div>
+</div>
+</body>
+</html>
 <?php
 	//don't run the rest of the page
 	exit;
