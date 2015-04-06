@@ -19,8 +19,63 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<style>
+		h2.rank{
+		color:white;width:64px;height:64px;border:9px solid #808080;background:#363a42;border-radius:32px;padding-left:14px;padding-top:7px;position:relative;left:265px;top:50px;
+		}
+		h2.name{
+		color:#808080;font-size:18px;width:100px;background:#003900;position:relative;left:255px;top:15px;z-index:3;
+		}
+		h2.points{
+		color:#808080;font-size:18px;width:105px;background:#003900;position:relative;left:250px;top:-5px;z-index:3;
+		}
+		img.groups{
+		width:320px;height:320px;border:60px solid transparent;border-radius:25px;position:relative;left:140px;top:-80px;
+		}
+		</style>
+		<script>
+		
+		var points = [22,20,19,17,16,13,12,11,9,7,6,5,3,2,1,0,"Group 1","Group 2","Group 3","Group 4","Group 5","Group 6","Group 7","Group 8","Group 9","Group 10","Group 11","Group12","Group 13","Group 14","Group 15","Group 16","images/group1.jpg","images/group2.jpg","images/group3.jpg","images/group4.jpg","images/group5.jpg","images/group6.jpg","images/group7.jpg","images/group8.jpg","images/group9.jpg","images/group10.jpg","images/group11.jpg","images/group12.jpg","images/group13.jpg","images/group14.jpg","images/group15.jpg","images/group16.jpg"];
+		function sort(points) {
+var j=0;
+for (i=0;i<15;i++) {
+j=i+1;
+while (points[j-1]<points[j] && j>0) {
+var temp=points[j];points[j]=points[j-1];points[j-1]=temp;
+var temp=points[j+16];points[j+16]=points[j+15];points[j+15]=temp;
+var temp=points[j+32];points[j+32]=points[j+31];points[j+31]=temp;
+j--;
+}
+}
+for (i=0;i<48;i++) {
+document.getElementById(i).src = points[i];
+}
+}
+	function big(x,c) {
+	x.onclick = function () {x.style.border = "0px solid";x.style.top = "-30px";sort(points);};
+	if (c==1) {
+	x.style.border = "50px solid #EAC117";
+	}
+	else if (c==2) {
+	x.style.border = "50px solid #848482";
+	}
+	else if (c==3) {
+	x.style.border = "50px solid #C35817";
+	}
+	else {
+	x.style.border = "50px solid #003900";
+	}
+	timer=setInterval(function () {x.style.border = "0px solid";x.style.top = "-30px";}, 1000);
+}
+function normal(x) {
+	clearInterval(timer);
+	x.style.border = "50px solid transparent";
+	x.style.top = "-80px";
+	}
+</script>
+
 	</head>
-<body>
+<body onload="sort(points)">
 
 <div id="header-wrapper">
 				<div class="container">
@@ -53,17 +108,73 @@
 				<table id = "table" cellspacing="3" cellpadding="3"<col width="20" />
                   <col width="300" />
 				  <col width="298" />	</table>
-<script> 
 
-var table = "";
-table += "<tr><td>Num</td><td>Name</td><td>Points</td></tr>"
-for (var i = 1 ; i < 16; i++) {
-	table += "<tr><td>" + i + "</td><td></td><td></td></tr>"
-}
-document.getElementById("table").innerHTML = table;
-
-
-</script>
+<div class="inner">
+<h2 class="rank" style="color:#363a42;background:#FFD700;border:9px solid #EAC117">1</h2>
+<h2 class="name" style="color:#363a42;background:#EAC117" id="16"><script> document.write(points[16]); </script></h2>
+<h2 class="points" style="color:#363a42;background:#EAC117" id="0"><script> document.write(points[0] + " Points"); </script></h2>
+<img onmouseover="big(this,1)" onmouseout="normal(this)" class="groups" src="images/group1.jpg" id="32">
+<h2 class="rank" style="color:#363a42;background:#C0C0C0;border:9px solid #848482">2</h2>
+<h2 class="name" style="color:#363a42;background:#848482" id="17"><script> document.write(points[17]); </script></h2>
+<h2 class="points" style="color:#363a42;background:#848482" id="1"><script> document.write(points[1] + " Points"); </script></h2>
+<img onmouseover="big(this,2)" onmouseout="normal(this)" class="groups" src="images/group2.jpg" id="33">
+<h2 class="rank" style="color:#363a42;background:#CD7F32;border:9px solid #C35817">3</h2>
+<h2 class="name" style="color:#363a42;background:#C35817" id="18"><script> document.write(points[18]); </script></h2>
+<h2 class="points" style="color:#363a42;background:#C35817" id="2"><script> document.write(points[2] + " Points"); </script></h2>
+<img onmouseover="big(this,3)" onmouseout="normal(this)" class="groups" src="images/group3.jpg" id="34">
+<h2 class="rank">4</h2>
+<h2 class="name"  id="19"><script> document.write(points[19]); </script></h2>
+<h2 class="points"  id="3"><script> document.write(points[3] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group4.jpg" id="35">
+<h2 class="rank">5</h2>
+<h2 class="name" id="20"><script> document.write(points[20]); </script></h2>
+<h2 class="points" id="4"><script> document.write(points[4] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group5.jpg" id="36">
+<h2 class="rank">6</h2>
+<h2 class="name" id="21"><script> document.write(points[21]); </script></h2>
+<h2 class="points" id="5"><script> document.write(points[5] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group6.jpg" id="37">
+<h2 class="rank">7</h2>
+<h2 class="name" id="22"><script> document.write(points[22]); </script></h2>
+<h2 class="points" id="6"><script> document.write(points[6] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group7.jpg" id="38">
+<h2 class="rank">8</h2>
+<h2 class="name" id="23"><script> document.write(points[23]); </script></h2>
+<h2 class="points" id="7"><script> document.write(points[7] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group8.jpg" id="39">
+<h2 class="rank">9</h2>
+<h2 class="name" id="24"><script> document.write(points[24]); </script></h2>
+<h2 class="points" id="8"><script> document.write(points[8] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group9.jpg" id="40">
+<h2 class="rank" style="padding-left:7px">10</h2>
+<h2 class="name" id="25"><script> document.write(points[25]); </script></h2>
+<h2 class="points" id="9"><script> document.write(points[9] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group10.jpg" id="41">
+<h2 class="rank" style="padding-left:7px">11</h2>
+<h2 class="name" id="26"><script> document.write(points[26]); </script></h2>
+<h2 class="points" id="10"><script> document.write(points[10] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group11.jpg" id="42">
+<h2 class="rank" style="padding-left:7px">12</h2>
+<h2 class="name" id="27"><script> document.write(points[27]); </script></h2>
+<h2 class="points" id="11"><script> document.write(points[11] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group12.jpg" id="43">
+<h2 class="rank" style="padding-left:7px">13</h2>
+<h2 class="name" id="28"><script> document.write(points[28]); </script></h2>
+<h2 class="points" id="12"><script> document.write(points[12] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group13.jpg" id="44">
+<h2 class="rank" style="padding-left:7px">14</h2>
+<h2 class="name" id="29"><script> document.write(points[29]); </script></h2>
+<h2 class="points" id="13"><script> document.write(points[13] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group14.jpg" id="45">
+<h2 class="rank" style="padding-left:7px">15</h2>
+<h2 class="name" id="30"><script> document.write(points[30]); </script></h2>
+<h2 class="points" id="14"><script> document.write(points[14] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group15.jpg" id="46">
+<h2 class="rank" style="padding-left:7px">16</h2>
+<h2 class="name" id="31"><script> document.write(points[31]); </script></h2>
+<h2 class="points" id="15"><script> document.write(points[15] + " Points"); </script></h2>
+<img onmouseover="big(this,0)" onmouseout="normal(this)" class="groups" src="images/group16.jpg" id="47">
+</div>
 </ul>
 </nav>
 </div>
